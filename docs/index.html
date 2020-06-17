@@ -1,0 +1,455 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <title>Konek0 - Documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="doc.css">
+    <link rel="author" href="humans.txt">
+
+    <meta name="description" content="An all-around Discord bot to fit your Discord server needs.">
+    <meta name="theme-color" content="#fcba41">
+    <meta charset='utf-8'>
+    <meta property="og:site_name" content="Konek0">
+    <meta property="og:url" content="https://docs.konek0.nl/">
+    <meta property="og:image" content="https://i.vacefron.nl/konek0-avatar.png">
+  </head>
+  <body>
+    <div class="doc__bg"></div>
+    <nav class="header">
+      <h1 class="logo"><a href="https://konek0.nl/">Konek0</a></h1>
+      <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="https://github.com/VACEfron/" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+        <li class="menu__item"><a href="https://konek0.nl/" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+      </ul>
+    </nav>
+    <div class="wrapper">
+      <aside class="doc__nav">
+        <ul>
+          <li class="js-btn selected">Getting Started</li>
+          <li class="js-btn">Variables</li>
+          <li class="js-btn">General</li>
+          <li class="js-btn">Toggleroles</li>
+          <li class="js-btn">Starboard</li>
+          <li class="js-btn">Welcoming</li>
+          <li class="js-btn">Goodbyes</li>
+          <li class="js-btn">Leveling</li>
+          <li class="js-btn">Logging</li>
+          <li class="js-btn">Word Filter</li>
+          <li class="js-btn">Anti Ads</li>
+          <li class="js-btn">Anti Spam</li>
+          <li class="js-btn">Anti Caps</li>
+          <li class="js-btn">Anti Mentions</li>
+          <li class="js-btn">Images Only</li>
+          <li class="js-btn">Warnings</li>
+        </ul>
+      </aside>
+      <article class="doc__content">
+        <section class="js-section">
+          <h2 class="section__title">Getting Started</h2>
+          <p>Welcome, this documentation page contains information about how to use Konek0 and the customization it provides. Konek0 provides a great amount of commands, ranging from fun, leveling, music, utility and most importantly (in my opinion): moderation.<br/>Konek0 uses JSON for customization. These docs will look into that and serve as a guide.</p>
+          <h2 class="section__title">JSON File</h2>
+          <p>First, to access your JSON file, you use the <span style="color: #fcba41">.settings</span> command and download the provided file. This file contains your unique server settings you may edit to customize the bot for your server. After you're done, you use <span style="color: #fcba41">.settings upload</span> with the file attached to update your settings. You can always get the template with <span style="color: #fcba41">.settings template</span></p>
+          <hr/>
+          <section class="js-section">
+          <h2 class="section__title">Variables</h2>
+          <table id="customers">
+            <tr>
+              <th>Variable</th>
+              <th>Value type</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>true | false</td>
+              <td>BOOLEAN</td>
+              <td>Toggles the setting on or off.</td>
+            </tr>
+            <tr>
+              <td>ROLE_ID</td>
+              <td>ULONG</td>
+              <td>The ID of a role of your choice.</td>
+            </tr>
+            <tr>
+              <td>CHANNEL_ID</td>
+              <td>ULONG</td>
+              <td>The ID of a channel of your choice.</td>
+            </tr>
+            <tr>
+              <td>none | mute | kick | ban</td>
+              <td>STRING</td>
+              <td>The action the bot applies to the user when x happens.</td>
+            </tr>
+          </table>
+        </section>
+
+        <section class="js-section">
+            <h2 class="section__title">Custom Prefixes</h2>
+            <div class="code__block code__block--notabs">
+              <pre class="code code--block">
+                <code>
+                    "custom_prefixes": ["CUSTOM","PREFIXES","HERE"],
+                    "enable_default_prefix": true|false,
+                </code>
+              </pre>
+              <p>
+                <span style="color: #fcba41">"custom_prefixes"</span> is a list where you can add your own custom prefixes in quotation marks, seperated with commas.<br/>
+                <span style="color: #fcba41">"enable_default_prefix"</span> toggles the default prefix (.) on or off. This is true on default.<br/>
+              </p>
+            </div>
+
+            <h2 class="section__title">Muted Role</h2>
+            <div class="code__block code__block--notabs">
+              <pre class="code code--block">
+                <code>
+                    "muted_role": ROLE_ID,
+                </code>
+              </pre>
+              <p><span style="color: #fcba41">"muted_role"</span> sets the role Konek0 will assign when manually muting users with muting commands, auto-muting and detecting muted users.<br/>
+              </p>
+            </div>
+
+          <h2 class="section__title">Auto Dehoist</h2>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                  "auto_dehoist": true|false,
+              </code>
+            </pre>
+            <p><span style="color: #fcba41">"auto_dehoist"</span> toggles whether Konek0 will automatically reset nicknames of people trying to hoist themselves by using special characters like exclamation marks in front of their names. It will also detect these users when they join your server and give them a random nickname.<br/>
+            </p>
+          </div>
+        </section>
+
+<section class="js-section">
+          <h2 class="section__title">Toggleroles</h2>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                "toggleroles": {
+	              &nbsp;&nbsp;&nbsp;&nbsp;"roles": [ROLE_ID, ROLE_ID],
+	              &nbsp;&nbsp;&nbsp;&nbsp;"deny_access": [ROLE_ID, ROLE_ID]
+	              &nbsp;&nbsp;&nbsp;&nbsp;},
+              </code>
+            </pre>
+            <p>
+              <span style="color: #fcba41">"roles"</span> is a list where you can set roles, seperated with commas that users can add using the <span style="color: #fcba41">.toggleroles</span> or <span style="color: #fcba41">.roleme</span> command.<br/>
+              <span style="color: #fcba41">"deny_access"</span> is a list where you can set roles seperated with commas that are restricted from using the <span style="color: #fcba41">.toggleroles</span> command. Any user with one or more of these roles will not be allowed to use the command.<br/>
+            </p>
+          </div>
+</section>
+<section class="js-section">
+          <h2 class="section__title">Starboard</h2>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                "starboard": {
+	              &nbsp;&nbsp;&nbsp;&nbsp;"enable_starboard": true|false,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"channel": CHANNEL_ID,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"star_minimum": 3
+	              &nbsp;&nbsp;&nbsp;&nbsp;},
+              </code>
+            </pre>
+            <p>
+              <span style="color: #fcba41">"enable_starboard"</span> toggles the starboard on or off.<br/>
+              <span style="color: #fcba41">"channel"</span> is the channel in which the starboarded messages will be displayed.<br/>
+              <span style="color: #fcba41">"star_minimum"</span> is the minimum amount of stars a message must receive from different users in order to appear on the starboard.<br/>
+            </p>
+          </div>
+        </section>
+
+<section class="js-section">
+          <h2 class="section__title">Welcoming</h2>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                "welcome": {
+  	            &nbsp;&nbsp;&nbsp;&nbsp;"enable_message": true|false,
+  	            &nbsp;&nbsp;&nbsp;&nbsp;"channel":"CHANNEL_ID,
+  	            &nbsp;&nbsp;&nbsp;&nbsp;"random_message": true|false,
+    	          &nbsp;&nbsp;&nbsp;&nbsp;"message": "Hello [USER] (or [MENTION]), welcome to [SERVER]!",
+  	            &nbsp;&nbsp;&nbsp;&nbsp;"grant_role_user": ROLE_ID,
+  	            &nbsp;&nbsp;&nbsp;&nbsp;"grant_role_bot": ROLE_ID
+  	            &nbsp;&nbsp;&nbsp;&nbsp;},
+              </code>
+            </pre>
+            <p><span style="color: #fcba41">"enable_message"</span> toggles the welcome message on or off.<br/>
+              <span style="color: #fcba41">"channel"</span> is the channel where the welcome messages will be sent.<br/>
+              <span style="color: #fcba41">"random_message"</span> toggles a random welcome message when a user joins the server. This will overwrite <span style="color: #fcba41">"message"</span>.<br/>
+              <span style="color: #fcba41">"message"</span> is your custom message that the bot will send when a user joins the server.</br>
+              <span style="color: #fcba41">"grant_role_user"</span> is the role a user will instantly get once they join the server.</br>
+              <span style="color: #fcba41">"grant_role_bot"</span> is the role a bot will instantly get once they join the server.</br>
+            </p>
+          </div>
+</section>
+<section class="js-section">
+          <h2 class="section__title">Goodbyes</h2>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                "goodbye": {
+  	            &nbsp;&nbsp;&nbsp;&nbsp;"enable_message": true|false,
+  	            &nbsp;&nbsp;&nbsp;&nbsp;"channel":"CHANNEL_ID,
+  	            &nbsp;&nbsp;&nbsp;&nbsp;"random_message": true|false,
+    	          &nbsp;&nbsp;&nbsp;&nbsp;"message": "Sad to see you go, [USER]",
+  	            &nbsp;&nbsp;&nbsp;&nbsp;"save_roles": true|false
+  	            &nbsp;&nbsp;&nbsp;&nbsp;},
+              </code>
+            </pre>
+            <p><span style="color: #fcba41">"enable_message"</span> toggles the goodbye message on or off.<br/>
+              <span style="color: #fcba41">"channel"</span> is the channel where the goodbye messages will be sent.<br/>
+              <span style="color: #fcba41">"random_message"</span> toggles a random goodbye message when a user leaves the server. This will overwrite <span style="color: #fcba41">"message"</span>.<br/>
+              <span style="color: #fcba41">"message"</span> is your custom message that the bot will send when a user leaves the server.</br>
+              <span style="color: #fcba41">"save_roles"</span> Toggles whether Konek0 will save a user's roles when they leave, so they automatically get it back when they join again.</br>
+            </p>
+          </div>
+</section>
+<section class="js-section">
+          <h2 class="section__title">Leveling</h2>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                "leveling": {
+	              &nbsp;&nbsp;&nbsp;&nbsp;"enable_leveling": true|false,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"announce_levelup": true|false,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"delete_on_leave": true|false,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"xp_gain": "low|normal|high",
+	              &nbsp;&nbsp;&nbsp;&nbsp;"announce_message": "[USER] (or [MENTION]) reached level **[LEVEL]**!",
+                &nbsp;&nbsp;&nbsp;&nbsp;"enable_custom_banners": true|false,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"ignore_channels": [CHANNEL_ID, CHANNEL_ID],
+	              &nbsp;&nbsp;&nbsp;&nbsp;"ignore_roles": [ROLE_ID, ROLE_ID],
+	              &nbsp;&nbsp;&nbsp;&nbsp;"stack_rewards": "true|false",
+	              &nbsp;&nbsp;&nbsp;&nbsp;"rewards": [
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"level": 2, "role": ROLE_ID},
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"level": 5, "role": ROLE_ID}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
+	              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+              </code>
+            </pre>
+            <p><span style="color: #fcba41">"enable_leveling"</span> toggles leveling on or off. No one will gain xp when disabled. This is false on default.<br/>
+              <span style="color: #fcba41">"announce_levelup"</span> toggles whether the bot will announce when a user has leveled up.<br/>
+              <span style="color: #fcba41">"delete_on_leave"</span> Toggles whether a user's level gets deleted when they leave the server.<br/>
+              <span style="color: #fcba41">"xp_gain"</span> determines the amount of xp people get for the messages they send.</br>
+              <span style="color: #fcba41">"announce_message"</span> is your custom message the bot will say when a user levels up. <span style="color: #fcba41">[USER]</span> names the user, <span style="color: #fcba41">[MENTION]</span> mentions and pings the user, <span style="color: #fcba41">[LEVEL]</span> is their new level, <span style="color: #fcba41">[SERVER]</span> names the server.</br>
+              <span style="color: #fcba41">"enable_custom_banners"</span> toggles custom banners on or off. This is true on default.<br/>
+              <span style="color: #fcba41">"ignore_channels"</span> is a list where you can set channels seperated with commas in which no one will gain xp.<br/>
+              <span style="color: #fcba41">"ignore_roles"</span> is a list where you can set roles seperated with commas that will never gain xp, regardless of where they chat. For example: setting the muted role will prevent muted users from gaining xp.<br/>
+              <span style="color: #fcba41">"stack_rewards"</span> toggles whether users will keep their previous role reward when they earn a new one. Disabling this means users can have one role reward at a time.<br/>
+              <span style="color: #fcba41">"rewards"</span> is a list of role rewards people earn by leveling up. When a user reaches the <span style="color: #fcba41">"level"</span>, they will get the <span style="color: #fcba41">"role"</span>. You can add as many role rewards as you need.<br/>
+            </p>
+          </div>
+</section>
+<section class="js-section">
+          <h2 class="section__title">Logging</h2>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                "logs": {
+	              &nbsp;&nbsp;&nbsp;&nbsp;"enable_logs": true|false,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"join_log": CHANNEL_ID,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"leave_log": CHANNEL_ID,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"ban_log": CHANNEL_ID,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"unban_log": CHANNEL_ID,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"kick_log": CHANNEL_ID,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"mute_log": CHANNEL_ID,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"unmute_log": CHANNEL_ID,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"delete_log": CHANNEL_ID,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"edit_log": CHANNEL_ID,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"warn_log": CHANNEL_ID,
+                &nbsp;&nbsp;&nbsp;&nbsp;"role_log": CHANNEL_ID
+	              &nbsp;&nbsp;&nbsp;&nbsp;},
+              </code>
+            </pre>
+            <p><span style="color: #fcba41">"enable_logs"</span> toggles the logging on or off.<br/>
+              The rest is straight forward: <span style="color: #fcba41">"join_log"</span> logs when a user joins, <span style="color: #fcba41">"ban_log"</span> logs when a user gets banned, <span style="color: #fcba41">"delete_log"</span> logs deleted messages, <span style="color: #fcba41">"warn_log"</span> log when a user gets warned by a moderator or auto-warn, etc.
+            </p>
+          </div>
+</section>
+<section class="js-section">
+          <h2 class="section__title">Word Filter</h2>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                "word_filter": {
+	              &nbsp;&nbsp;&nbsp;&nbsp;"enable_wordfilter": true|false,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"banned_words": ["BANNED", "WORDS", "HERE"],
+	              &nbsp;&nbsp;&nbsp;&nbsp;"ignore_roles": [ROLE_ID, ROLE_ID, ROLE_ID],
+	              &nbsp;&nbsp;&nbsp;&nbsp;"punishment": "none|mute|kick|ban"
+	              &nbsp;&nbsp;&nbsp;&nbsp;},
+              </code>
+            </pre>
+            <p><span style="color: #fcba41">"enable_wordfilter"</span> toggles the word filter on or off.<br/>
+              <span style="color: #fcba41">"banned_words"</span> is a list where you can set banned words in quotation marks, seperated with commas that Konek0 will filter out in chat and notify the user.<br/>
+              <span style="color: #fcba41">"ignore_roles"</span> is a list where you can set roles seperated with commas that will not be affected by the word-filter. It is recommended that moderator roles are added to this list.<br/>
+              <span style="color: #fcba41">"punishment"</span> is the action Konek0 will apply to the user when they get caught by the word-filter.</br>
+            </p>
+          </div>
+</section>
+<section class="js-section">
+          <h2 class="section__title">Anti Ads</h2>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                "anti_ads": {
+    	          &nbsp;&nbsp;&nbsp;&nbsp;"enable_antiads": true|false,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"ignore_roles": [ROLE_ID, ROLE_ID],
+	              &nbsp;&nbsp;&nbsp;&nbsp;"ignore_channels": [CHANNEL_ID, CHANNEL_ID, CHANNEL_ID],
+	              &nbsp;&nbsp;&nbsp;&nbsp;"punishment": "none|mute|kick|ban"
+	              },
+              </code>
+            </pre>
+            <p><span style="color: #fcba41">"enable_antiads"</span> toggles the ad-filter on or off. This will filter out Discord invite links.<br/>
+              <span style="color: #fcba41">"ignore_roles"</span> is a list where you can set roles seperated with commas that will not be affected by the ad filter. It is recommended that moderator roles are added to this list.<br/>
+              <span style="color: #fcba41">"ignore_channels"</span> is a list where you can set channels seperated with commas that will not be checked for advertisements.<br/>
+              <span style="color: #fcba41">"punishment"</span> is the action Konek0 will apply to the user when they get caught by the ad-filter.</br>
+            </p>
+          </div>
+</section>
+<section class="js-section">
+          <h2 class="section__title">Anti Spam</h2>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                "anti_spam": {
+    	          &nbsp;&nbsp;&nbsp;&nbsp;"enable_antispam": true|false,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"ignore_roles": [ROLE_ID, ROLE_ID],
+	              &nbsp;&nbsp;&nbsp;&nbsp;"ignore_channels": [CHANNEL_ID, CHANNEL_ID, CHANNEL_ID],
+	              &nbsp;&nbsp;&nbsp;&nbsp;"punishment": "none|mute|kick|ban"
+	              },
+              </code>
+            </pre>
+            <p><span style="color: #fcba41">"enable_antispam"</span> toggles anti-spam on or off. This will detect when users spam messages and filters them.<br/>
+              <span style="color: #fcba41">"ignore_roles"</span> is a list where you can set roles seperated with commas that will not be affected by the spam filter. It is recommended that moderator roles are added to this list.<br/>
+              <span style="color: #fcba41">"ignore_channels"</span> is a list where you can set channels seperated with commas that will not be checked for spam.<br/>
+              <span style="color: #fcba41">"punishment"</span> is the action Konek0 will apply to the user when they get caught by the spam-filter.</br>
+            </p>
+          </div>
+</section>
+<section class="js-section">
+          <h2 class="section__title">Anti Caps</h2>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                "anti_caps": {
+                &nbsp;&nbsp;&nbsp;&nbsp;"enable_anticaps": true|false,
+    	          &nbsp;&nbsp;&nbsp;&nbsp;"caps_percentage": 55,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"ignore_roles": [ROLE_ID, ROLE_ID],
+	              &nbsp;&nbsp;&nbsp;&nbsp;"ignore_channels": [CHANNEL_ID, CHANNEL_ID, CHANNEL_ID],
+	              &nbsp;&nbsp;&nbsp;&nbsp;"punishment": "none|mute|kick|ban"
+	              },
+              </code>
+            </pre>
+            <p><span style="color: #fcba41">"enable_anticaps"</span> toggles anti-caps on or off. This will detect when users spam caps and filters them.<br/>
+              <span style="color: #fcba41">"caps_percentage"</span> is how much % of a message must be in caps for it to be detected as excessive caps. This won't trigger on short messages.<br/>
+              <span style="color: #fcba41">"ignore_roles"</span> is a list where you can set roles seperated with commas that will not be affected by the caps filter. It is recommended that moderator roles are added to this list.<br/>
+              <span style="color: #fcba41">"ignore_channels"</span> is a list where you can set channels seperated with commas that will not be checked for excessive caps.<br/>
+              <span style="color: #fcba41">"punishment"</span> is the action Konek0 will apply to the user when they get caught by the caps-filter.</br>
+            </p>
+          </div>
+</section>
+<section class="js-section">
+          <h2 class="section__title">Anti Mentions</h2>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                "anti_mention": {
+                &nbsp;&nbsp;&nbsp;&nbsp;"enable_antimention": true|false,
+    	          &nbsp;&nbsp;&nbsp;&nbsp;"mentions_trigger": 4,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"ignore_roles": [ROLE_ID, ROLE_ID],
+	              &nbsp;&nbsp;&nbsp;&nbsp;"ignore_channels": [CHANNEL_ID, CHANNEL_ID, CHANNEL_ID],
+	              &nbsp;&nbsp;&nbsp;&nbsp;"punishment": "none|mute|kick|ban"
+	              },
+              </code>
+            </pre>
+            <p><span style="color: #fcba41">"enable_antimention"</span> toggles anti-mention on or off. This will detect when users spam mentions and filters them.<br/>
+              <span style="color: #fcba41">"mentions_trigger"</span> is the amount of mentions a message must contain for it to be detected as excessive mentions.<br/>
+              <span style="color: #fcba41">"ignore_roles"</span> is a list where you can set roles seperated with commas that will not be affected by the mentions filter. It is recommended that moderator roles are added to this list.<br/>
+              <span style="color: #fcba41">"ignore_channels"</span> is a list where you can set channels seperated with commas that will not be checked for excessive mentions.<br/>
+              <span style="color: #fcba41">"punishment"</span> is the action Konek0 will apply to the user when they get caught by the mentions-filter.</br>
+            </p>
+          </div>
+</section>
+<section class="js-section">
+          <h2 class="section__title">Images Only</h2>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                "images_only": {
+	              &nbsp;&nbsp;&nbsp;&nbsp;"channels": [CHANNEL_ID, CHANNEL_ID],
+	              &nbsp;&nbsp;&nbsp;&nbsp;"ignore_roles": [ROLE_ID", ROLE_ID]
+	              &nbsp;&nbsp;&nbsp;&nbsp;},
+              </code>
+            </pre>
+            <p>
+              <span style="color: #fcba41">"channels"</span> is a list where you can set channels seperated with commas where the image-only filter will take effect. You can only post images in these channels. Messages that don't contain images will be removed.<br/>
+              <span style="color: #fcba41">"ignore_roles"</span> is a list where you can set roles seperated with commas that will not be affected by the image-only filter. It is recommended that moderator roles are added to this list.<br/>
+            </p>
+          </div>
+</section>
+<section class="js-section">
+          <h2 class="section__title">Warnings</h2>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                "warns": {
+	              &nbsp;&nbsp;&nbsp;&nbsp;"warn_limit": 6,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"action": "none|mute|kick|ban",
+	              &nbsp;&nbsp;&nbsp;&nbsp;"adfilter_autowarn": true|false,
+                &nbsp;&nbsp;&nbsp;&nbsp;"wordfilter_autowarn": true|false,
+                &nbsp;&nbsp;&nbsp;&nbsp;"antispam_autowarn": true|false,
+                &nbsp;&nbsp;&nbsp;&nbsp;"anticaps_autowarn": true|false,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"antimention_autowarn": true|false,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"imagesonly_autowarn": true|false,
+	              &nbsp;&nbsp;&nbsp;&nbsp;"anti_ads": {
+		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"warnings": 3,
+		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"action": "none|mute|kick|ban"
+		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+	              &nbsp;&nbsp;&nbsp;&nbsp;"word_filter": {
+		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"warnings": 3,
+		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"action": "none|mute|kick|ban"
+		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+                &nbsp;&nbsp;&nbsp;&nbsp;"anti_spam": {
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"warnings": 3,
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"action": "none|mute|kick|ban"
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+                &nbsp;&nbsp;&nbsp;&nbsp;"anti_caps": {
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"warnings": 3,
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"action": "none|mute|kick|ban"
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+                &nbsp;&nbsp;&nbsp;&nbsp;"anti_mention": {
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"warnings": 3,
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"action": "none|mute|kick|ban"
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+	              &nbsp;&nbsp;&nbsp;&nbsp;"images_only": {
+		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"warnings": 3,
+		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"action": "none|mute|kick|ban"
+		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+	              &nbsp;&nbsp;&nbsp;&nbsp;}
+              </code>
+            </pre>
+            <p>
+              <span style="color: #fcba41">"warn_limit"</span> is the amount of warnings a user has to have to be punished by <span style="color: #fcba41">"action"</span>.<br/>
+              <span style="color: #fcba41">"action"</span> is the action Konek0 will apply to the user when they reach the <span style="color: #fcba41">"warn_limit"</span>.<br/>
+              <span style="color: #fcba41">"adfilter_autowarn"</span> toggles whether users will be automatically warned by Konek0 when they get caught by the ad-filter. This is true on default.<br/>
+              <span style="color: #fcba41">"wordfilter_autowarn"</span> toggles whether users will be automatically warned by Konek0 when they get caught by the word-filter. This is true on default.<br/>
+              <span style="color: #fcba41">"antispam_autowarn"</span> toggles whether users will be automatically warned by Konek0 when they get caught by the spam-filter. This is true on default.<br/>
+              <span style="color: #fcba41">"anticaps_autowarn"</span> toggles whether users will be automatically warned by Konek0 when they get caught by the caps-filter. This is true on default.<br/>
+              <span style="color: #fcba41">"antimention_autowarn"</span> toggles whether users will be automatically warned by Konek0 when they get caught by the mentions-filter. This is true on default.<br/>
+              <span style="color: #fcba41">"imagesonly_autowarn"</span> toggles whether users will be automatically warned by Konek0 when they get caught by the image-only filter. This is true on default.<br/><br/>
+              For each filter, (<span style="color: #fcba41">ad-filter</span>, <span style="color: #fcba41">word-filter</span>, <span style="color: #fcba41">anti-spam</span>, <span style="color: #fcba41">anti-caps</span>, <span style="color: #fcba41">anti-mention</span>, <span style="color: #fcba41">image-only</span>), Konek0 can automatically warn the user as mentioned above. When a user gets automatically warned by any of the 3 filters and they now have <span style="color: #fcba41">"warnings"</span> amount of warnings or more, Konek0 will apply <span style="color: #fcba41">"action"</span> to the user. For example: when a user gets caught by the ad-filter and now has 3 warns in total, Konek0's <span style="color: #fcba41">"action"</span> will trigger and it will mute, kick or ban the user or (on default) do nothing at all.
+               <br/>
+            </p>
+          </div>
+        </section>
+      </article>
+    </div>
+
+    <footer class="footer">Documentation page source created by Codrops. Edited by VAC Efron.</footer>
+    <script src="javascript.js"></script>
+  </body>
+</html>

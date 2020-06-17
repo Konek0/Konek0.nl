@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <title>Konek0 - Tutorials</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="doc.css">
+
+    <meta name="description" content="An all-around Discord bot to fit your Discord server needs.">
+    <meta name="theme-color" content="#fcba41">
+    <meta property="og:site_name" content="Konek0">
+    <meta property="og:url" content="https://konek0.nl/tutorials/settings-basic-guide/">
+    <meta property="og:image" content="https://i.vacefron.nl/konek0-avatar.png">
+  </head>
+  <body>
+    <div class="doc__bg"></div>
+    <nav class="header">
+      <h1 class="logo"><a href="https://konek0.nl/">Konek0</a></h1>
+      <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="https://konek0.nl/" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+      </ul>
+    </nav>
+    <div class="wrapper">
+      <article class="doc__content">
+          <h1 class="section__title">Your settings file: basic guide</h1>
+          <p>This guide will show you the basics of how to edit your settings file to customize Konek0 for your server. <br>
+            It will cover the basics of JSON and how to use it.
+          </p>
+
+          <div class="thin-line"></div>
+
+          <h2 class="section__title">Variables</h2>
+          <p>Below is a table of the different variables you'll use to customize Konek0.<br>
+            For example, you'll use 'true' and 'false' to turn things on and off, and you'll replace 'ROLE_ID' with a role's ID of your choice.
+          </p>
+          <table>
+            <tr>
+              <th>Variable</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>true | false</td>
+              <td>Toggles the setting on or off.</td>
+            </tr>
+            <tr>
+              <td>ROLE_ID</td>
+              <td>The ID of a role of your choice.</td>
+            </tr>
+            <tr>
+              <td>CHANNEL_ID</td>
+              <td>The ID of a channel of your choice.</td>
+            </tr>
+            <tr>
+              <td>none | mute | kick | ban</td>
+              <td>The action the bot applies to the user when x happens.</td>
+            </tr>
+          </table>
+
+          <div class="thin-line"></div>
+
+          <h2 class="section__title">1) Get your settings file</h2>
+          <p>
+          <span style="font-weight: bold;">1.</span> Type '.settings' to get your settings file. Konek0 will send a message back with a .json file attached.<br>
+          <span style="font-weight: bold;">2.</span> Download the file to your computer.<br>
+          <span style="font-weight: bold;">3.</span> Open it in any text editor. (We'll use Notepad here)<br><br>
+          You'll now have a file that looks like this:
+          </p>
+          <a href="images/settings_template.png" target= "_blank"><img class="image template_image" src="images/settings_template.png" alt=""></a>
+
+          <div class="thin-line"></div>
+
+            <h2 class="section__title">2) Example: cutomizing prefixes</h2>
+            <div class="code__block code__block--notabs">
+              <p>
+                For this example, we will be customizing Konek0's prefixes for your server.<br>
+                We'll be editing the list of custom prefixes (learning how to use lists) and toggle the default prefix (toggling settings on or off).
+              </p>
+              <a href="images/custom_prefixes.png" target= "_blank"><img class="image" src="images/custom_prefixes.png" alt=""></a>
+              <p>
+                "custom_prefixes" is in brackets, which means it's a list.<br>
+                Notice how everything in the list is in double quotes and seperated with commas.<br>
+                <span style="color: #ffaa21;">NOTE: Items in ID lists are not put in double quotes (E.g. Channel ID lists).</span><br>
+                Let's customize this list:
+              </p>
+              <a href="images/edit_prefixes.png" target= "_blank"><img class="image" src="images/edit_prefixes.png" alt=""></a>
+              <p>
+                Notice how we've added 4 new prefixes. ("!", "/", "Konek0 " and "pls ").<br>
+                We've put them all in double quotes and seperated them with commas.<br><br>
+                Next, let's decide whether we want to have the default prefix (.) on or off.<br>
+                In our case, we just made 4 new prefixes, so for the purposes of this guide we'll disable the default prefix.<br>
+                Simply replace "true|false" with "false" to disable it.
+              </p>
+              <a href="images/disable_prefix.png" target= "_blank"><img class="image" src="images/disable_prefix.png" alt=""></a>
+            </div>
+
+            <div class="thin-line"></div>
+
+            <h2 class="section__title">3) Updating your settings</h2>
+            <div class="code__block code__block--notabs">
+              <p>
+                When you're done editing your settings file, you must upload it by giving it back to Konek0.<br><br>
+                <span style="font-weight: bold;">1.</span> Save the changes in your file.<br>
+                <span style="font-weight: bold;">2.</span> Go back to Discord and type '.settings upload' with your edited file attached.<br>
+                <span style="font-weight: bold;">3.</span> Done! Your customized settings are now applied.<br>
+              </p>
+              <a href="images/settings_upload.png" target= "_blank"><img class="image upload_image" src="images/settings_upload.png" alt=""></a>
+            </div>
+
+            <p>
+              <br>
+              These are the basics of your JSON file. Please refer to the <a href="https://docs.konek0.nl/"><span style="color: #fcba41;">documentation</span></a> page for information on every category in your customization file.
+            </p>
+
+      </article>
+    </div>
+    <script src="javascript.js"></script>
+  </body>
+</html>

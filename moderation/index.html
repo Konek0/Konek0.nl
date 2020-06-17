@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Konek0 - Moderation</title>
+    <meta charset='utf-8'>
+    <meta property="og:site_name" content="Konek0">
+    <meta name="description" content="An all-around Discord bot to fit your Discord server needs.">
+    <meta property="og:image" content="https://i.vacefron.nl/konek0-avatar.png">
+    <meta property="og:url" content="https://konek0.nl/moderation">
+    <meta name="theme-color" content="#fcba41">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="assets/icons/favicon.png"/>
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li><a href="https://konek0.nl/"><span>Konek0</span></a></li>
+        <li><a class="dark-hover" href="https://konek0.nl/moderation/">Moderation</a></li>
+        <li><a class="dark-hover" href="https://konek0.nl/leveling/">Leveling</a></li>
+        <li><a class="dark-hover" href="https://konek0.nl/music/">Music</a></li>
+        <li><a class="dark-hover gold" href="https://konek0.nl/commands/">Commands</a></li>
+        <li><a class="dark-hover purple" href="https://docs.konek0.nl/">Documentation</a></li>
+        <li><a class="dark-hover red" href="https://www.patreon.com/VACEfron" target="_blank">Donate</a></li>
+        <div class="dropdown">
+          <li><a class="dark-hover dropbtn" href="">Help</a></li>
+          <div class="dropdown-content">
+            <a href="https://konek0.nl/tutorials/">Tutorials</a>
+            <a href="https://discord.gg/TtR32WT" target="_blank">Support server</a>
+          </div>
+        </div>
+      </ul>
+    </header>
+
+    <div class="topnav">
+      <a href="https://konek0.nl/" class="active">Menu</a>
+      <div id="links">
+        <a href="https://konek0.nl/moderation/">Moderation</a>
+        <a href="https://konek0.nl/leveling/">Leveling</a>
+        <a href="https://konek0.nl/music/">Music</a>
+        <a href="https://konek0.nl/commands/">Commands</a>
+        <a href="https://docs.konek0.nl/">Documentation</a>
+        <a href="https://www.patreon.com/VACEfron" target="_blank">Donate</a>
+        <a href="https://konek0.nl/tutorials/">Tutorials</a>
+        <a href="https://discord.gg/TtR32WT" target="_blank">Support Server</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    </div>
+
+    <div class="Container">
+      <img class="avatar" src="assets/images/avatar-mod.png" alt="">
+      <h1>Advanced & automated moderation</h1>
+      <p>Protect your Discord server with custom made methods of moderation and auto-mod!</p>
+      <a class="button" href="https://konek0.nl/invite/">
+        <button class="button button-add" type="button" name="button">
+        <img class="button-image" src="assets/icons/Discord-Logo-White.svg" alt="">
+        <span>Add to your Discord</span>
+      </button>
+    </a>
+    <a class="button" href="#moreinfo">
+      <button class=" button button-highlights" type="button" name="button">
+        <span>Show me more!</span>
+      </button>
+    </a>
+
+    <div class="HighlightsContainer" id="moreinfo">
+
+      <div class="highlight">
+        <h1>Fighting spam in your channels</h1>
+        <p>Do you find it annoying when people spam certain things in your chat? Well, now you won't have to manually moderate them anymore. Konek0 gives you the options to enable an <span>anti-messages spam</span> filter, as well as <span>anti-caps lock spam</span> and <span>anti-mentions spam</span>. All of these features are customizable to your liking and will make your server much easier to moderate.</p>
+        <img class="highlight-img" src="assets/highlights/spam-caps.png" alt="">
+      </div>
+
+      <div class="highlight">
+        <h1>Blocking advertisements & blacklisting words</h1>
+        <p>We know that you work hard to grow your server, and you don't want people to advertise their own servers. We also know that banning certain words is hard to enforce. Now with Konek0, you can <span>filter advertisements</span> and <span>blacklist words</span> or sentences. You can also customize their <span>punishment</span>. Do you want to <span>warn</span> them or simply <span>kick</span> or <span>ban</span> them instead? Maybe <span>no punishment</span> at all? No worries, it's all up to you.</p>
+        <img class="highlight-img" src="assets/highlights/ads-words.png" alt="">
+      </div>
+
+      <div class="highlight">
+        <h1>Temporary warning & muting</h1>
+        <p>Sometimes a permanent punishment is too harsh, or maybe you just don't want to have to remember to unmute that one user. No worries, let Konek0 do that work for you. You can <span>temporarily warn and mute</span> users, and they will expire automatically. Of course this is all optional, and you can apply <span>permanent punishments</span> instead. Whatever fits your case.</p>
+        <img class="highlight-img" src="assets/highlights/warn-mute.png" alt="">
+      </div>
+
+      <div class="highlight">
+        <h1>Set up image-only channels</h1>
+        <p>Do you want to set up a media channel where people can't talk? With Konek0, you can. Set up <span>one or multiple channels</span> where every message that isn't an image gets filtered out. You can also set roles that bypass this rule, for example your moderators.</p>
+        <img class="highlight-img" src="assets/highlights/image-only.png" alt="">
+      </div>
+      <div class="space"></div>
+    </div>
+  </div>
+
+  <script>
+  function myFunction() {
+    var x = document.getElementById("links");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+  </script>
+
+  </body>
+  </html>
